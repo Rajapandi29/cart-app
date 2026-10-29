@@ -1,0 +1,67 @@
+
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+!.env.sample
+
+# Azure credentials and local settings
+local.settings.json
+.azure/
+.azure-dev/
+*.publishsettings
+.publishsettings
+
+# Build output
+dist/
+build/
+out/
+coverage/
+.next/
+.nuxt/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.bak
+
+# Test artifacts
+playwright-report/
+test-results/
+
+# Certificates and private keys
+*.pem
+*.key
+*.pfx
+*.p12
+
+# Local Functions artifacts
+.azurefunctions/
+.python_packages/
+
+# Optional local cache
+.cache/
+.parcel-cache/
+
+# Never commit real secrets
+secrets/
