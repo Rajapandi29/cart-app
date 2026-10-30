@@ -1,99 +1,246 @@
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f5ff58">
+
   <title>SprintCart | Move Your Way</title>
+
   <link rel="stylesheet" href="/style.css">
 </head>
+
 <body>
-  <header class="topbar">
-    <a class="brand" href="/">SPRINT<span>CART</span></a>
-    <nav>
-      <a href="#shop">Shop</a>
-      <a href="#orders">My orders</a>
-      <a href="#admin" id="adminNav" hidden>Admin</a>
-    </nav>
-    <div class="account">
-      <span id="userName">Guest</span>
-      <a href="/login" id="loginLink">Sign in</a>
-      <a href="/logout" id="logoutLink" hidden>Sign out</a>
-      <button id="cartToggle">Bag <span id="cartCount">0</span></button>
-    </div>
-  </header>
 
-  <main>
-    <section class="hero">
+<header class="topbar">
+
+  <a class="brand" href="/">
+    SPRINT<span>CART</span>
+  </a>
+
+  <nav>
+    <a href="#shop">Shop</a>
+    <a href="#orders">My Orders</a>
+    <a href="#admin" id="adminNav" hidden>Admin</a>
+  </nav>
+
+  <div class="account">
+
+    <span id="userName">Guest</span>
+
+    <a href="/login" id="loginLink">
+      Sign In
+    </a>
+
+    <a href="/logout" id="logoutLink" hidden>
+      Sign Out
+    </a>
+
+    <button id="cartToggle">
+      Bag <span id="cartCount">0</span>
+    </button>
+
+  </div>
+
+</header>
+
+
+<main>
+
+  <!-- HERO SECTION -->
+
+  <section class="hero">
+
+    <div>
+      <p class="eyebrow">YOUR NEXT MOVE STARTS HERE</p>
+
+      <h1>
+        Find your<br>
+        next <span>favourite.</span>
+      </h1>
+
+      <p>
+        Performance gear for every kind of movement.
+      </p>
+
+      <a class="button dark" href="#shop">
+        Shop Collection
+      </a>
+    </div>
+
+    <div class="hero-art">
+      <div class="orb orb-one"></div>
+      <div class="orb orb-two"></div>
+
+      <div class="hero-label">
+        MOVE<br>BETTER.
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- PRODUCTS -->
+
+  <section id="shop" class="section">
+
+    <div class="section-head">
+
       <div>
-        <p class="eyebrow">YOUR NEXT MOVE STARTS HERE</p>
-        <h1>Find your<br>next <span>favourite.</span></h1>
-        <p>Performance gear for every kind of movement.</p>
-        <a class="button dark" href="#shop">Shop the collection</a>
-      </div>
-      <div class="hero-art" aria-label="Colorful original sportswear artwork">
-        <div class="orb orb-one"></div>
-        <div class="orb orb-two"></div>
-        <div class="hero-label">MOVE<br>BETTER.</div>
-      </div>
-    </section>
-
-    <section id="shop" class="section">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">THE COLLECTION</p>
-          <h2>Gear up.</h2>
-        </div>
-        <input id="search" type="search" placeholder="Search products…" aria-label="Search products">
+        <p class="eyebrow">THE COLLECTION</p>
+        <h2>Gear Up.</h2>
       </div>
 
-      <div class="categories" id="categories">
-        <button class="active" data-category="All">All gear</button>
-        <button data-category="Shoes">Shoes</button>
-        <button data-category="Clothing">Clothing</button>
-        <button data-category="Accessories">Accessories</button>
-      </div>
-      <div id="products" class="products" aria-live="polite"></div>
-    </section>
+      <input
+        id="search"
+        type="search"
+        placeholder="Search products..."
+        aria-label="Search products"
+      >
 
-    <section id="orders" class="section">
-      <p class="eyebrow">YOUR ACCOUNT</p>
-      <h2>Orders & tracking</h2>
-      <div id="ordersList" class="orders-list">Sign in to see your orders.</div>
-    </section>
-
-    <section id="admin" class="section" hidden>
-      <p class="eyebrow">STORE MANAGEMENT</p>
-      <h2>Add a product</h2>
-      <form id="productForm" class="admin-form">
-        <input name="name" placeholder="Product name" required maxlength="100">
-        <select name="category" required>
-          <option value="Shoes">Shoes</option>
-          <option value="Clothing">Clothing</option>
-          <option value="Accessories">Accessories</option>
-        </select>
-        <input name="price" type="number" min="1" step="0.01" placeholder="Price (INR)" required>
-        <input name="image" type="url" placeholder="Image URL (optional)">
-        <input name="stock" type="number" min="0" step="1" value="10" required>
-        <button class="button dark">Add product</button>
-      </form>
-      <p id="adminMessage" role="status"></p>
-    </section>
-  </main>
-
-  <aside id="cartPanel" class="cart-panel" hidden>
-    <div class="cart-heading">
-      <h2>Your bag</h2>
-      <button id="closeCart" aria-label="Close cart">✕</button>
     </div>
-    <div id="cartItems"></div>
-    <p class="total">Total <strong id="cartTotal">₹0</strong></p>
-    <button id="checkout" class="button dark full">Place order</button>
-    <p class="small">Demo checkout only. No payment is collected.</p>
-  </aside>
-  <div id="toast" role="status" class="toast" hidden></div>
-  <footer><strong>SPRINTCART</strong><span>Move your way. Original demo store.</span></footer>
-  <script src="/app.js" defer></script>
+
+    <div class="categories" id="categories">
+
+      <button class="active" data-category="All">
+        All Gear
+      </button>
+
+      <button data-category="Shoes">
+        Shoes
+      </button>
+
+      <button data-category="Clothing">
+        Clothing
+      </button>
+
+      <button data-category="Accessories">
+        Accessories
+      </button>
+
+    </div>
+
+    <div id="products" class="products">
+      Loading products...
+    </div>
+
+  </section>
+
+
+  <!-- ORDERS -->
+
+  <section id="orders" class="section">
+
+    <p class="eyebrow">YOUR ACCOUNT</p>
+
+    <h2>Orders & Tracking</h2>
+
+    <div id="ordersList" class="orders-list">
+      Sign in to see your orders.
+    </div>
+
+  </section>
+
+
+  <!-- ADMIN -->
+
+  <section id="admin" class="section" hidden>
+
+    <p class="eyebrow">STORE MANAGEMENT</p>
+
+    <h2>Add Product</h2>
+
+    <form id="productForm" class="admin-form">
+
+      <input
+        name="name"
+        placeholder="Product Name"
+        required
+        maxlength="100"
+      >
+
+      <select name="category" required>
+        <option value="Shoes">Shoes</option>
+        <option value="Clothing">Clothing</option>
+        <option value="Accessories">Accessories</option>
+      </select>
+
+      <input
+        name="price"
+        type="number"
+        min="1"
+        placeholder="Price INR"
+        required
+      >
+
+      <input
+        name="image"
+        type="url"
+        placeholder="Image URL"
+      >
+
+      <input
+        name="stock"
+        type="number"
+        min="0"
+        value="10"
+        required
+      >
+
+      <button class="button dark">
+        Add Product
+      </button>
+
+    </form>
+
+    <p id="adminMessage"></p>
+
+  </section>
+
+</main>
+
+
+<!-- CART -->
+
+<aside id="cartPanel" class="cart-panel" hidden>
+
+  <div class="cart-heading">
+
+    <h2>Your Bag</h2>
+
+    <button id="closeCart">✕</button>
+
+  </div>
+
+  <div id="cartItems"></div>
+
+  <p class="total">
+    Total
+    <strong id="cartTotal">₹0</strong>
+  </p>
+
+  <button id="checkout" class="button dark full">
+    Place Order
+  </button>
+
+  <p class="small">
+    Demo checkout only. No payment collected.
+  </p>
+
+</aside>
+
+
+<div id="toast" class="toast" hidden></div>
+
+
+<footer>
+  <strong>SPRINTCART</strong>
+  <span>Move your way. Original demo store.</span>
+</footer>
+
+
+<script src="/app.js" defer></script>
+
 </body>
 </html>

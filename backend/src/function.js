@@ -1,6 +1,6 @@
 
 const { app } = require("@azure/functions");
-const store = require("../../shared/store");
+const store = require("../shared/store");
 
 function userId(request) {
   return request.headers.get("x-app-user-id");
